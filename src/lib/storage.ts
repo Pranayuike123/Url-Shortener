@@ -8,7 +8,7 @@ export async function addLink(url: string, customCode?: string) {
   }
 
   try {
-    // ✅ CURRENT TIMESTAMP use karo
+    
     const result = await pool.query(
       `INSERT INTO links (code, target_url, created_at) VALUES ($1, $2, NOW()) RETURNING *`,
       [code, url]
@@ -52,7 +52,7 @@ export async function getAllLinks() {
 
 export async function incrementClickCount(code: string) {
   try {
-    // ✅ CURRENT TIMESTAMP use karo
+   
     await pool.query(
       `UPDATE links SET clicks = clicks + 1, last_clicked = NOW() WHERE code = $1`,
       [code]

@@ -7,10 +7,8 @@ export async function GET(
 ) {
   try {
     const { code } = await params;
-    
-    // ✅ 'await' add karo
     const link = await getLinkByCode(code);
-    
+
     if (!link) {
       return new Response('Link not found', { 
         status: 404,
@@ -18,7 +16,7 @@ export async function GET(
       });
     }
 
-    // ✅ 'await' add karo
+    
     await incrementClickCount(code);
     return NextResponse.redirect(link.target_url);
     

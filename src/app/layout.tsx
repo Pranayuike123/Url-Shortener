@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { initDB } from '@/lib/database'; // ✅ UNCOMMENT KARO
+import { initDB } from '@/lib/database'; 
 
-// ✅ DATABASE INITIALIZE KARO
+
 initDB();
 
 export const metadata: Metadata = {

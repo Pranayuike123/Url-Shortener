@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
     }
 
     try {
-      const newLink = await addLink(url, customCode); // ✅ 'await' add karo
+      const newLink = await addLink(url, customCode); 
       return NextResponse.json(newLink);
     } catch (error: any) {
       return NextResponse.json({ error: error.message }, { status: 409 });
@@ -24,6 +24,6 @@ export async function POST(request: NextRequest) {
 }
 
 export async function GET() {
-  const links = await getAllLinks(); // ✅ 'await' add karo
+  const links = await getAllLinks(); 
   return NextResponse.json(links);
 }
