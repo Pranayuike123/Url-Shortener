@@ -27,7 +27,7 @@ export default function Home() {
             <LinkForm onLinkCreated={handleLinkCreated} />
           </div>
           <div className="xl:col-span-3">
-            <LinkTable key={refreshKey} />
+            <LinkTable refreshKey={refreshKey} />
           </div>
         </div>
       </main>
